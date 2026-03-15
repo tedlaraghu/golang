@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
-	"io/ioutil"
+	"os"	
 )
 
 // Load Company Facts
@@ -44,7 +44,7 @@ func LoadFacts(cik, name, organization, email string) ([]byte, error) {
 	}
 
 	// Read response body
-	body, err := io.ReadAll(response.Body)
+	body, err := os.ReadAll(response.Body)
 	if err != nil {
 		return nil, err
 	}
