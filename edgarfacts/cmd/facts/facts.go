@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	// "internal/facts"
-	"github.com/tedlaraghu/edgarfacts/internal/facts/facts.go"
+	"github.com/tedlaraghu/edgarfacts/internal/facts"
 )
 
 func main() {
