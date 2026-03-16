@@ -2,8 +2,8 @@ package facts
 
 import (
 	"fmt"
-	"internal/facts"
-	// "github.com/tedlaraghu/edgarfacts/internal/facts"
+	// "internal/facts"
+	"github.com/tedlaraghu/edgarfacts/internal/facts"
 )
 
 func main() {
