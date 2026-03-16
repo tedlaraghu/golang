@@ -3,6 +3,7 @@ package facts
 import (
 	"fmt"
 	"internal/facts"
+	// "github.com/tedlaraghu/edgarfacts/internal/facts"
 )
 
 func main() {
@@ -17,5 +18,5 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf(string(facts))
+	fmt.Println(string(facts))
 }

@@ -1,10 +1,10 @@
-package facts
+package main
 
 import (
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"net/http"
-	"os"	
 )
 
 // Load Company Facts
@@ -14,7 +14,7 @@ func LoadFacts(cik, name, organization, email string) ([]byte, error) {
 	url := fmt.Sprintf("https://data.sec.gov/api/xbrl/companyfacts/CIK%s.json", cik)
 
 	//Create client
-	client := *http.Client{}
+	client := &http.Client{}
 
 	//Prepare request
 	req, err := http.NewRequest("GET", url, nil)
@@ -38,13 +38,13 @@ func LoadFacts(cik, name, organization, email string) ([]byte, error) {
 	//Check Response Code
 	if response.StatusCode != http.StatusOK {
 		errorStatus := errors.New(
-			fmt.Sprintf("Status Code != OK, %v", response.StatusCode)
+			fmt.Sprintf("Status Code != OK: %v", response.StatusCode),
 		)
-		return nil, StatusCode
+		return nil, errorStatus
 	}
 
 	// Read response body
-	body, err := os.ReadAll(response.Body)
+	body, err := ioutil.ReadAll(response.Body)
 	if err != nil {
 		return nil, err
 	}
