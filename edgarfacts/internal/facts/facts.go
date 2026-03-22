@@ -11,7 +11,7 @@ import (
 func LoadFacts(cik, name, organization, email string) ([]byte, error) {
 
 	//Define URL for API
-	url := fmt.Sprintf("https://datXa.sec.gov/api/xbrl/companyfacts/CIK%s.json", cik)
+	url := fmt.Sprintf("https://data.sec.gov/api/xbrl/companyfacts/CIK%s.json", cik)
 
 	//Create client
 	client := &http.Client{}
