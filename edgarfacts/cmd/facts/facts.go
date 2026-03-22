@@ -62,6 +62,8 @@ func main() {
 		panic(err)
 	}
 
+	fmt.Printf("Folder Path: %s\n", folderPath)
+
 	//Upload to Google storage
 	fileName := fmt.Sprintf("%s.json", cik)
 	filePath := filepath.Join(folderPath, fileName)
