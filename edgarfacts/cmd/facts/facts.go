@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	cik := "0000886982"
+	cik := "X0000886982"
 	organization := "My Organization"
 	name := "RT"
 	email := "rt@example.com"
