@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"path/filepath"
+	"path"
+	"strings"
 
 	"github.com/tedlaraghu/golang/edgarfacts/internal/facts"
 	"github.com/tedlaraghu/golang/edgarfacts/internal/storage"
@@ -65,8 +66,12 @@ func main() {
 	fmt.Printf("Folder Path: %s\n", folderPath)
 
 	//Upload to Google storage
+	// fileName := fmt.Sprintf("%s.json", cik)
+	// filePath := filepath.Join(folderPath, fileName)
+
+	folderPath = strings.ReplaceAll(folderPath, "\\", "/")
 	fileName := fmt.Sprintf("%s.json", cik)
-	filePath := filepath.Join(folderPath, fileName)
+	filePath := path.Join(folderPath, fileName)
 
 	logger.Printf("Uploading Facts to %s on bucket %s\n", fileName, bucketName)
 
