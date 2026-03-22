@@ -19,9 +19,9 @@ func main() {
 	var email string
 
 	flag.StringVar(&cik, "cik", "", "CIK of the company")
-	flag.StringVar(&organization, "organization", "", "Organization name")
-	flag.StringVar(&name, "name", "", "Name of the user")
-	flag.StringVar(&email, "email", "", "Email")
+	flag.StringVar(&organization, "organization", "", "organization")
+	flag.StringVar(&name, "name", "", "name")
+	flag.StringVar(&email, "email", "", "email")
 
 	flag.Parse()
 
