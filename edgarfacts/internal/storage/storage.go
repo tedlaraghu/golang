@@ -10,7 +10,7 @@ import (
 )
 
 // upload Bytes
-func uploadBytes(data []byte, bucket, path string) error {
+func UploadBytes(data []byte, bucket, path string) error {
 
 	//Create buffer
 	buffer := bytes.NewBuffer(data)
