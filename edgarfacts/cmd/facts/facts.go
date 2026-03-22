@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	// "internal/facts"
+
 	"github.com/tedlaraghu/golang/edgarfacts/internal/facts"
+	"github.com/tedlaraghu/golang/edgarfacts/internal/storage"
 )
 
 func main() {
@@ -18,5 +19,17 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(string(factData))
+	// fmt.Println(string(factData))
+
+	bucketName := "gostoragert"
+	filePath := fmt.Sprintf("sec/edgar/facts/stage/%s.json", cik)
+
+	err = storage.UploadBytes(factData, bucketName, filePath)
+	if err != nil {
+		panic(err)
+	}
+
+	//Log Upload
+	fmt.Printf("Uploaded %s\n", cik)
+
 }
